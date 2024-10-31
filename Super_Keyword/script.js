@@ -1,31 +1,42 @@
 class Animal{
-    constructor(name, age){
+    constructor(name){
         this.name = name;
-        this.age = age;
+    }
+    speedCount(){
+        return `${this.name} has speed `;
     }
 }
 
 class Cat extends Animal{
-    constructor(runSpeed){
-        super(name, age);
+    constructor(name, runSpeed){
+        super(name);
         this.runSpeed = runSpeed;
+    }
+    speedCount(){
+        return `${super.speedCount()}of ${this.runSpeed}`;
     }
 }
 
 class Eagle extends Animal{
-    constructor(flySpeed){
-        super(name, age);
+    constructor(name, flySpeed){
+        super(name);
         this.flySpeed = flySpeed;
+    }
+    speedCount(){
+        return `${super.speedCount()}of ${this.runSpeed}`;
     }
 }
 
 class Fish extends Animal{
-    constructor(swimSpeed){
-        super(name, age);
+    constructor(name, swimSpeed){
+        super(name);
         this.swimSpeed = swimSpeed;
+    }
+    speedCount(){
+        return `${super.speedCount()}of ${this.runSpeed}`;
     }
 }
 
-const cat = new Cat("Chingi", 2, "50Kmph");
-const eagle = new Eagle("Mic", 3, "80Kmph");
-const fish = new Eagle("Shark", 6, "3Kmph");
+const cat = new Cat("Chingi", "50Kmph");
+
+console.log(cat.speedCount());
